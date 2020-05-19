@@ -10,13 +10,13 @@ const io = socketio.listen(server);
 //Settings
 app.set('port', process.env.PORT || 3000);
 
-require('./public/sockets')(io);
+require('./src/public/sockets')(io);
 
 
 
 
 //Enviando archivos estaticos
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'src/public')));
 //Empezando el servidor
 server.listen(app.get('port'), () => {
     console.log('Running on port', app.get('port'));
